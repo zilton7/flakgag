@@ -21,7 +21,7 @@ def new_post():
                     author=current_user)
         db.session.add(post)
         db.session.commit()
-        flash('Your post has been created!!!', 'success')
+        flash('Your post has been created!', 'success')
         return redirect(url_for('main.home'))
     return render_template('create_post.html', title='New Post', form=form, legend='Create Post')
 
