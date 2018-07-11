@@ -44,21 +44,20 @@ class Post(db.Model):
     content = db.Column(db.Text, nullable=True)
     votes = db.Column(db.Integer, nullable=True, default=0)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)  # Post Author relationship
-    #comment_id = db.Column(db.Integer, db.ForeignKey('comment.id'), nullable=False)  # Post Comment relationship
-   # comments = db.relationship('Comment', backref='author', lazy=True)  # Comment Author relationship
+    comments = db.relationship('Comment', backref='title', lazy='dynamic')
 
-    def __repr__(self):
-        return f"Post('{self.id}', '{self.title}', '{self.date_posted}')"
+    def get_comments(self):
+        return Comment.query.filter_by(post_id=post.id).order_by(Comment.timestamp.desc())
 
 
 class Comment(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    content = db.Column(db.Text, nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)  # Comment Author relationship
-    post_id = db.Column(db.Integer, db.ForeignKey('post.id'), nullable=False)  # Comment Post relationship
+    id = db.Column(db.Integer, primary_key = True)
+    body = db.Column(db.String(140))
+    timestamp = db.Column(db.DateTime)
+    post_id = db.Column(db.Integer, db.ForeignKey('post.id'))
 
     def __repr__(self):
-        return f"Comment('{self.id}', '{self.content}', '{self.user_id}', '{self.post_id}')"
+        return '<Post %r>' % self.body
 
 
 class Vote(db.Model):
