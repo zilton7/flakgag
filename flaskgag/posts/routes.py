@@ -2,7 +2,7 @@ from flask import (render_template, url_for, flash,
                    redirect, request, abort, Blueprint)
 from flask_login import current_user, login_required
 from flaskgag import db
-from flaskgag.models import Post, Vote
+from flaskgag.models import Post, Vote, Comment
 from flaskgag.posts.forms import PostForm, CommentForm
 from flaskgag.users.utils import save_post_picture
 
@@ -26,10 +26,15 @@ def new_post():
     return render_template('create_post.html', title='New Post', form=form, legend='Create Post')
 
 
-# @posts.route("/comment/<int:post_id>/new", method=['GET', 'POST'])
-# def new_comment():
-#     form = CommentForm()
-#     if form.validate_on_submit():
+@posts.route("/comment/new/<int:post_id>", method=['GET', 'POST'])
+def new_comment():
+    form = CommentForm()
+    if form.validate_on_submit():
+        comment = Comment(body=body)
+        db.session.add(comment)
+        db.dession.commit()
+        flash('Your comment has been added.')
+    return render_template('add_comment.html', title='New Comment', form=form, legend='Add Comment')
 
 
 
