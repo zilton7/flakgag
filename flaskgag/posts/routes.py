@@ -3,7 +3,7 @@ from flask import (render_template, url_for, flash,
 from flask_login import current_user, login_required
 from flaskgag import db
 from flaskgag.models import Post, Vote
-from flaskgag.posts.forms import PostForm
+from flaskgag.posts.forms import PostForm, CommentForm
 from flaskgag.users.utils import save_post_picture
 
 
@@ -24,6 +24,14 @@ def new_post():
         flash('Your post has been created!', 'success')
         return redirect(url_for('main.home'))
     return render_template('create_post.html', title='New Post', form=form, legend='Create Post')
+
+
+# @posts.route("/comment/<int:post_id>/new", method=['GET', 'POST'])
+# def new_comment():
+#     form = CommentForm()
+#     if form.validate_on_submit():
+
+
 
 
 @posts.route("/post/<int:post_id>")

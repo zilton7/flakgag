@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f8a6135-235b-4606-baed-04b256d92223" name="Default" comment="" />
+    <list default="true" id="7f8a6135-235b-4606-baed-04b256d92223" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/flaskgag/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskgag/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flaskgag/posts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskgag/posts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flaskgag/posts/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskgag/posts/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flaskgag/site.db" beforeDir="false" afterPath="$PROJECT_DIR$/flaskgag/site.db" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +22,8 @@
       <file leaf-file-name="routes.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flaskgag/posts/routes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+            <state relative-caret-position="258">
+              <caret line="28" selection-start-line="28" selection-start-column="2" selection-end-line="31" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -38,7 +43,7 @@
       <file leaf-file-name="routes.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flaskgag/users/routes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
+            <state relative-caret-position="518">
               <caret line="43" selection-start-line="43" selection-end-line="43" />
               <folding>
                 <element signature="e#0#79#0" expanded="true" />
@@ -50,8 +55,8 @@
       <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flaskgag/posts/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+            <state relative-caret-position="221">
+              <caret line="13" column="17" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="17" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -83,8 +88,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/flaskgag/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+            <state relative-caret-position="895">
+              <caret line="83" column="7" lean-forward="true" selection-start-line="83" selection-end-line="84" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -196,7 +201,6 @@
         <option value="$PROJECT_DIR$/flaskblog/users/utils.py" />
         <option value="$PROJECT_DIR$/flaskgag/users/forms.py" />
         <option value="$PROJECT_DIR$/flaskgag/templates/create_post.html" />
-        <option value="$PROJECT_DIR$/flaskgag/posts/forms.py" />
         <option value="$PROJECT_DIR$/flaskgag/users/routes.py" />
         <option value="$PROJECT_DIR$/flaskgag/static/main.css" />
         <option value="$PROJECT_DIR$/flaskgag/__init__.py" />
@@ -205,8 +209,9 @@
         <option value="$PROJECT_DIR$/flaskgag/templates/layout.html" />
         <option value="$PROJECT_DIR$/flaskgag/users/utils.py" />
         <option value="$PROJECT_DIR$/flaskgag/templates/post.html" />
-        <option value="$PROJECT_DIR$/flaskgag/models.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/flaskgag/models.py" />
+        <option value="$PROJECT_DIR$/flaskgag/posts/forms.py" />
         <option value="$PROJECT_DIR$/flaskgag/posts/routes.py" />
       </list>
     </option>
@@ -238,13 +243,13 @@
               <item name="flask_gag" type="b2602c69:ProjectViewProjectNode" />
               <item name="flask_gag" type="462c0819:PsiDirectoryNode" />
               <item name="flaskgag" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="posts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flask_gag" type="b2602c69:ProjectViewProjectNode" />
               <item name="flask_gag" type="462c0819:PsiDirectoryNode" />
               <item name="flaskgag" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -311,15 +316,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49683544" visible="true" weight="0.20295984" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49964765" weight="0.32969698" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50528544" side_tool="true" weight="0.3260606" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32969698" />
-      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.4947146" weight="0.3260606" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="10" sideWeight="0.4947146" visible="true" weight="0.3260606" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" sideWeight="0.5031645" side_tool="true" weight="0.15503876" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49753347" visible="true" weight="0.2739394" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49753347" weight="0.2739394" />
       <window_info id="Favorites" order="2" sideWeight="0.50090414" side_tool="true" weight="0.24947146" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Thumbnails" order="9" weight="0.32969698" />
@@ -566,26 +572,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flaskgag/posts/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flaskgag/users/routes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="e#0#79#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/flaskgag/templates/layout.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -627,20 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2018.1/python_stubs/-155014376/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="796" column="8" selection-start-line="796" selection-start-column="8" selection-end-line="796" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flaskgag/templates/user_posts.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="58" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/flaskgag/users/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
@@ -665,17 +637,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2018.1/python_stubs/-155014376/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="226" column="4" selection-start-line="226" selection-start-column="4" selection-end-line="226" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaskgag/users/routes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="e#0#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaskgag/posts/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/flaskgag/posts/routes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+        <state relative-caret-position="258">
+          <caret line="28" selection-start-line="28" selection-start-column="2" selection-end-line="31" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaskgag/templates/user_posts.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="58" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/flaskgag/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+        <state relative-caret-position="895">
+          <caret line="83" column="7" lean-forward="true" selection-start-line="83" selection-end-line="84" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
