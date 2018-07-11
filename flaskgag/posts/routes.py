@@ -27,26 +27,22 @@ def new_post():
 
 
 @posts.route("/comment/new/<int:post_id>", method=['GET', 'POST'])
-def new_comment():
+def new_comment(post_id):
+    post = Post.query.get_or_404(post_id)
     form = CommentForm()
     if form.validate_on_submit():
-        comment = Comment(body=body)
+        comment = Comment(body=form.body.data, post_id=post.id)
         db.session.add(comment)
         db.dession.commit()
         flash('Your comment has been added.')
+        return redirect(url_for('posts.post', post_id=post.id))
     return render_template('add_comment.html', title='New Comment', form=form, legend='Add Comment')
-
-
 
 
 @posts.route("/post/<int:post_id>")
 def post(post_id):
-    # Dummy comment
-    comment_author = 'Sabaka'
-    comment_content = 'Nu nezinau kazkokia xuinia, cia nui nx...'
     post = Post.query.get_or_404(post_id)
-    return render_template('post.html', title=post.title, post=post, comment_author=comment_author,
-                           comment_content=comment_content)
+    return render_template('post.html', title=post.title, post=post)
 
 
 @posts.route("/post/<int:post_id>/update", methods=['GET', 'POST'])
