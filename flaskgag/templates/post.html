@@ -38,8 +38,17 @@
         <li>
         </li>
         </ul>
-            <medium class="text-bold">COMMENTS</medium>
-            <div> by {{ comment_author }} </div>
+                            {% if post.comments %}
+                {% if post.comments.count() > 0 %}
+                    <h2>Comments</h2>
+                    <p>
+                    {% for comment in post.comments %}
+                        <p>{{ comment.timestamp }}</p>
+                        <p>{{ comment.body }}</p>
+                    {% endfor %}
+                    </p>
+                {% endif %}
+                {% endif %}
     </center>
 </article>
 <!-- Modal -->
