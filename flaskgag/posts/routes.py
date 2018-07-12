@@ -26,16 +26,15 @@ def new_post():
     return render_template('create_post.html', title='New Post', form=form, legend='Create Post')
 
 
-@posts.route("/comment/new/<int:post_id>", methods=['GET', 'POST'])
-@login_required
+@posts.route("/post/<int:post_id>/comment/", methods=['GET', 'POST'])
 def new_comment(post_id):
     post = Post.query.get_or_404(post_id)
     form = CommentForm()
     if form.validate_on_submit():
-        comment = Comment(body=form.body.data, post_id=post.id)
+        comment = Comment(user_id=current_user.username, body=form.body.data, post_id=post.id)
         db.session.add(comment)
         db.session.commit()
-        flash('Your comment has been added.')
+        flash('Your comment has been added.', 'success')
         return redirect(url_for('posts.post', post_id=post.id))
     return render_template('add_comment.html', title='New Comment', form=form, legend='Add Comment')
 

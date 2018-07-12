@@ -5,21 +5,25 @@
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
                 <div class="form-group">
-                    {{ form.body.label(class="form-control-label") }}
-
-                    {% if form.body.errors  %}
-                    {{ form.body(class="form-control form-control-lg is-invalid") }}
-                    <div class="invalid-feedback">
-                        {% for error in form.body.errors %}
-                        <span>{{ error }}</span>
-                        {% endfor %}
-                    </div>
+                    {% if current_user.is_authenticated %}
+                        {{ form.body.label(class="form-control-label") }}
+                        {% if form.body.errors %}
+                        {{ form.body(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.body.errors %}
+                            <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
                     {% else %}
-                    {{ form.body(class="form-control form-control-lg") }}
+                        {{ form.body(class="form-control form-control-lg") }}
                     {% endif %}
+                </div>
             </fieldset>
             <div class="form-group">
                 {{ form.submit(class="btn btn-outline-info") }}
+                {% else %}
+                <h2>You must be logged in to post a comment</h2>
+                {% endif %}
             </div>
         </form>
     </div>

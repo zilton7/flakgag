@@ -13,7 +13,8 @@
                 <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('posts.update_post',
                                                                    post_id=post.id) }}">Update</a>
                 <button type="button" class="btn btn-danger btn-sm mr-1" data-toggle="modal"
-                        data-target="#deleteModalLong">Delete</button>
+                        data-target="#deleteModalLong">Delete
+                </button>
             </div>
             {% endif %}
         </div>
@@ -25,7 +26,8 @@
                 {% if current_user.is_authenticated %}
 
                 <li><a href="{{ url_for('posts.upvote', post_id=post.id, user_id = current_user.id) }}"
-                       type="button" class="btn btn-outline-primary btn-sm active" onclick="document.location.reload(true)';"
+                       type="button" class="btn btn-outline-primary btn-sm active"
+                       onclick="document.location.reload(true)';"
                        aria-pressed="true">⇪</a>
                     <p>{{ post.votes }}</p>
                 </li>
@@ -33,23 +35,25 @@
                 <li><a href="{{url_for('posts.upvote_guest')}}"
                        type="button" class="btn btn-outline-primary btn-sm active" aria-pressed="true">⇪</a>
                     <p>{{ post.votes }}</p>
-                </li></ul>
-        {% endif %}
-        <li>
-        </li>
-        </ul>
-                            {% if post.comments %}
-                {% if post.comments.count() > 0 %}
-                    <h2>Comments</h2>
-                    <p>
+                </li>
+            </ul>
+            {% endif %}
+            <li>
+            </li>
+            </ul>
+            {% if post.comments %}
+            {% if post.comments.count() > 0 %}
+            <h2>Comments</h2>
+                <div>
                     {% for comment in post.comments %}
-                        <p>{{ comment.timestamp }}</p>
-                        <p>{{ comment.body }}</p>
-                    {% endfor %}
-                    </p>
-                {% endif %}
-                {% endif %}
-    </center>
+                <h4 class="text-bold">{{ comment.user_id }}</h4>
+                <p>{{ comment.timestamp.strftime('%Y-%m-%d') }}</p>
+                <p>{{ comment.body }}</p>
+                {% endfor %}
+                </div>
+            {% endif %}
+            {% endif %}
+        </center>
 </article>
 <!-- Modal -->
 <div class="modal fade" id="deleteModalLong" tabindex="-1" role="dialog" aria-labelledby="deleteModalLongTitle"

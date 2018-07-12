@@ -16,6 +16,8 @@ class User(db.Model, UserMixin):
     image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
     password = db.Column(db.String(60), nullable=False)
     posts = db.relationship('Post', backref='author', lazy=True)  # Post Author relationship
+    comments = db.relationship('Comment', backref='commentator', lazy=True)  # Comment Author relationship
+
 
     def get_reset_token(self, expires_sec=1800):
         s = Serializer(current_app.config['SECRET_KEY'], expires_sec)
@@ -45,14 +47,15 @@ class Post(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)  # Post Author relationship
     comments = db.relationship('Comment', backref='title', lazy='dynamic')
 
-    def get_comments(self):
-        return Comment.query.filter_by(post_id=post.id).order_by(Comment.timestamp.desc())
+    # def get_comments(self):
+    #     return Comment.query.filter_by(post_id=post.id).order_by(Comment.timestamp.desc())
 
 
 class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.String(140))
-    timestamp = db.Column(db.DateTime)
+    timestamp = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)  # Comment Author relationship
     post_id = db.Column(db.Integer, db.ForeignKey('post.id'))
 
     def __repr__(self):
