@@ -14,22 +14,40 @@
         <center><a href="{{ url_for('posts.post', post_id=post.id) }}">
             <img src="{{ post.post_image_file }}" alt="{{ posts.title }}" height="75%" width="75%"></a>
 
+            <!--Upvote button STARTS here-->
             <ul class="article-footer-metadata">
                 {% if current_user.is_authenticated %}
-                <li><a href="{{ url_for('posts.upvote', post_id=post.id, user_id = current_user.id) }}"
-                       type="button" class="btn btn-outline-primary btn-sm active" aria-pressed="true">⇪</a>
-
-                     <p>{{ post.votes }}</p>
+                <li>
+                    <form action="{{ url_for('posts.upvote', post_id=post.id, user_id = current_user.id) }}">
+                        <input type="submit" class="btn btn-outline-primary btn-sm active" aria-pressed="true"
+                               value="⇪ {{ post.votes }}"/>
+                    </form>
                 </li>
                 {% else %}
-                <li><a href="{{url_for('posts.upvote_guest')}}"
-                       type="button" class="btn btn-outline-primary btn-sm active" aria-pressed="true">⇪</a>
-                    <p>{{ post.votes }}</p>
+                <li>
+                    <form action="{{ url_for('posts.upvote_guest') }}">
+                        <input type="submit" class="btn btn-outline-primary btn-sm active" aria-pressed="true"
+                               value="⇪ {{ post.votes }}"/>
+                    </form>
                 </li>
                 {% endif %}
+            <!--Upvote button ENDS here-->
+
+            <!--Comment Section START here-->
                 <li>
-                    <medium class="text-bold"></medium>
-                </li>
+                {% if post.comments.count() > 0 %}
+                    <form action="{{ url_for('posts.post', post_id=post.id) }}">
+                     <input type="submit" class="btn btn-outline-primary btn-sm active" aria-pressed="true"
+                               value="{{ post.comments.count() }}
+                        Comments"/>
+                    </form>
+                {% else %}
+                     <form action="{{ url_for('posts.post', post_id=post.id) }}">
+                     <input type="submit" class="btn btn-outline-primary btn-sm active" aria-pressed="true"
+                               value="No Comments Yet"/>
+                    </form>
+                 {% endif %}
+             <!--Comment Section END here-->
             </ul>
         </center>
     </div>
